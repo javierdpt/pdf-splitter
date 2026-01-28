@@ -127,7 +127,7 @@ chmod +x dist/PDF-Splitter
 
 ## License
 
-This project is free to use and modify for personal and commercial purposes.
+This project is licensed under the MIT License — see the `LICENSE` file for details.
 
 ## Contributing
 
@@ -141,7 +141,6 @@ Potential future enhancements:
 - [ ] Merge multiple PDFs
 - [ ] Password-protected PDF support
 - [ ] Drag and drop file support
-- [ ] Dark mode theme
 
 ---
 
