@@ -2,6 +2,40 @@
 
 A simple, user-friendly desktop application that splits PDF files into multiple documents with customizable pages per document. Works on both macOS and Windows.
 
+## Releases
+
+- **Quick download (ZIP) for macOS**: [![Download PDF-Splitter v1.0.0](https://img.shields.io/badge/Download-v1.0.0-blue?logo=download)](https://github.com/javierdpt/pdf-splitter/raw/main/versions/PDF-Splitter-macos-v1.0.0.zip)
+
+- Direct ZIP link for macOS: [Download PDF-Splitter v1.0.0](https://github.com/javierdpt/pdf-splitter/raw/main/versions/PDF-Splitter-macos-v1.0.0.zip)
+
+- **Quick download (ZIP) for Windows**: [![Download PDF-Splitter v1.0.0](https://img.shields.io/badge/Download-v1.0.0-blue?logo=download)](https://github.com/javierdpt/pdf-splitter/raw/main/versions/PDF-Splitter-windows-amd64-v1.0.0.zip)
+
+- Direct ZIP link for Windows: [Download PDF-Splitter v1.0.0](https://github.com/javierdpt/pdf-splitter/raw/main/versions/PDF-Splitter-windows-amd64-v1.0.0.zip)
+
+Notes:
+
+- The macOS link downloads the packaged macOS app (`.app`) inside a ZIP file.
+- The Windows link downloads the Windows executable (`.exe`) inside a ZIP file.
+- Alternatively, use the Releases page to view and download assets:
+   <https://github.com/javierdpt/pdf-splitter/releases>
+
+How to install on macOS:
+
+1. Double-click the downloaded ZIP to extract `PDF-Splitter-v1.0.0.app`.
+2. Move the `.app` into your `Applications` folder (or run from Finder).
+3. If macOS blocks the app on first run, right-click the app and choose "Open" to bypass Gatekeeper.
+
+How to run on Windows:
+
+1. Unzip `PDF-Splitter-windows-amd64-v1.0.0.zip` to a folder.
+2. Double-click `PDF-Splitter.exe` to run, or open PowerShell in the folder and run:
+
+```powershell
+.\PDF-Splitter.exe
+```
+
+1. If Windows Defender or SmartScreen blocks the executable, choose "More info" then "Run anyway" (or unblock via file Properties).
+
 ## Features
 
 - 🖱️ Easy-to-use graphical interface
@@ -33,11 +67,13 @@ pdf-splitter/
    - Or use Homebrew on macOS: `brew install python@3.14`
 
 3. **Install dependencies**
+
    ```bash
    pip install -r requirements.txt
    ```
 
 4. **Run the application**
+
    ```bash
    python pdf_splitter.py
    ```
@@ -45,11 +81,13 @@ pdf-splitter/
 ### Option 2: Build Standalone Executable
 
 1. **Install dependencies**
+
    ```bash
    pip install -r requirements.txt
    ```
 
 2. **Build the executable**
+
    ```bash
    python build.py
    ```
@@ -96,15 +134,19 @@ pdf-splitter/
 ## Building for Different Platforms
 
 ### macOS
+
 ```bash
 python build.py
 ```
+
 Creates: `dist/PDF-Splitter` (macOS app)
 
 ### Windows
+
 ```bash
 python build.py
 ```
+
 Creates: `dist/PDF-Splitter.exe` (Windows executable)
 
 **Note**: You must build the executable on the target platform. Build on Windows for Windows executable, and on macOS for macOS executable.
@@ -112,16 +154,19 @@ Creates: `dist/PDF-Splitter.exe` (Windows executable)
 ## Troubleshooting
 
 ### "No module named 'tkinter'" error
+
 - **macOS**: tkinter comes with Python. If missing, reinstall Python from python.org
 - **Linux**: Install with `sudo apt-get install python3-tk`
 - **Windows**: tkinter is included with Python
 
 ### Permission denied on macOS
+
 ```bash
 chmod +x dist/PDF-Splitter
 ```
 
 ### Antivirus blocking executable
+
 - Some antivirus software may flag PyInstaller executables as suspicious
 - This is a false positive - you can whitelist the application
 
@@ -136,6 +181,7 @@ Feel free to submit issues, fork the repository, and create pull requests for an
 ## Roadmap
 
 Potential future enhancements:
+
 - [ ] Custom icon for the application
 - [ ] Split by page ranges (e.g., pages 1-5, 10-15)
 - [ ] Merge multiple PDFs
@@ -145,32 +191,3 @@ Potential future enhancements:
 ---
 
 Made with ❤️ using Python and PyPDF2
-
-## Releases
-
-- **Quick download (ZIP)**: [![Download PDF-Splitter v1.0.0](https://img.shields.io/badge/Download-v1.0.0-blue?logo=download)](https://github.com/javierdpt/pdf-splitter/raw/main/versions/PDF-Splitter-v1.0.0.zip)
-
-- Direct ZIP link: [Download PDF-Splitter v1.0.0](https://github.com/javierdpt/pdf-splitter/raw/main/versions/PDF-Splitter-v1.0.0.zip)
-
-- Windows ZIP (quick download): [Download PDF-Splitter-windows-amd64.zip](https://github.com/javierdpt/pdf-splitter/raw/main/versions/PDF-Splitter-windows-amd64.zip)
-
-Notes:
-- The above link downloads the packaged macOS app (`.app`) inside a ZIP file.
-- Alternatively, use the Releases page to view and download assets:
-   https://github.com/javierdpt/pdf-splitter/releases
-
-How to install on macOS:
-1. Double-click the downloaded ZIP to extract `PDF-Splitter-v1.0.0.app`.
-2. Move the `.app` into your `Applications` folder (or run from Finder).
-3. If macOS blocks the app on first run, right-click the app and choose "Open" to bypass Gatekeeper.
-
-How to run on Windows:
-1. Unzip `PDF-Splitter-windows-amd64.zip` to a folder.
-2. Double-click `PDF-Splitter.exe` to run, or open PowerShell in the folder and run:
-
-```powershell
-.\PDF-Splitter.exe
-```
-
-3. If Windows Defender or SmartScreen blocks the executable, choose "More info" then "Run anyway" (or unblock via file Properties).
-

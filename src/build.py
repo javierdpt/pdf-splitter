@@ -15,11 +15,17 @@ def build_executable():
     
     # PyInstaller command
     pyinstaller_path = os.path.join(os.path.dirname(sys.executable), 'pyinstaller')
+
+    # Include the `assets` folder in the bundle. Use os.pathsep so the
+    # separator is correct on Windows (';') and POSIX (':').
+    add_data_arg = f"--add-data=assets{os.pathsep}assets"
+
     cmd = [
         pyinstaller_path,
         "--name=PDF-Splitter",
         "--noconsole",  # No console window
         "--onefile",   # Single executable file
+        add_data_arg,
         "--icon=./assets/icon.png",
         "src/pdf_splitter.py"
     ]

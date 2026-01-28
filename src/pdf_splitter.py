@@ -17,8 +17,19 @@ class PDFSplitterApp:
         self.root.title("PDF Splitter")
         self.root.geometry("600x480")
         self.root.resizable(False, False)
-        icon_path = os.path.join(os.path.dirname(__file__), '../assets/icon.png')
-        self.root.iconphoto(True, tk.PhotoImage(file=icon_path))
+        # Resolve assets path for both normal and PyInstaller-frozen execution.
+        if getattr(sys, 'frozen', False):
+            base_path = getattr(sys, '_MEIPASS', os.path.dirname(__file__))
+        else:
+            base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+        icon_path = os.path.join(base_path, 'assets', 'icon.png')
+        # Load icon if available; don't raise if missing when packaged.
+        if os.path.exists(icon_path):
+            try:
+                self.root.iconphoto(True, tk.PhotoImage(file=icon_path))
+            except Exception:
+                pass
         
         self.selected_file = None
         self.output_dir = None
