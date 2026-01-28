@@ -1,16 +1,25 @@
 .PHONY: install run build clean venv
 
+# Cross-platform venv python/pip paths
+ifeq ($(OS),Windows_NT)
+VENV_PY=.venv\\Scripts\\python.exe
+RM=rd /s /q
+else
+VENV_PY=.venv/bin/python
+RM=rm -rf
+endif
+
 venv:
-	python3 -m venv .venv
+	python -m venv .venv
 
 install: venv
-	.venv/bin/python -m pip install -r requirements.txt
+	$(VENV_PY) -m pip install -r requirements.txt
 
 run:
-	.venv/bin/python src/pdf_splitter.py
+	$(VENV_PY) src/pdf_splitter.py
 
 build:
-	.venv/bin/python src/build.py
+	$(VENV_PY) src/build.py
 
 clean:
-	rm -rf dist build *.spec __pycache__
+	$(RM) dist build *.spec __pycache__
